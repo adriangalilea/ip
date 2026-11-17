@@ -43,9 +43,9 @@ jobs:
 
   tap:
     needs: release
-    uses: adriangalilea/ci/.github/workflows/tap.yml@7018e276a6c519cef370fb1eeb1b8b5ee34da500 # v1.2.2
+    uses: adriangalilea/ci/.github/workflows/tap.yml@5169184af912b2208a4ef1ff136bf80f9fb5635e # main after v1.10.3: the tap's deploy key
     with:
       formula: ip
       version: ${{ github.ref_name }}
     secrets:
-      tap-token: ${{ secrets.TAP_TOKEN }}
+      tap-key: ${{ secrets.TAP_DEPLOY_KEY }}
