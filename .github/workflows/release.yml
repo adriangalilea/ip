@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+      - uses: actions/setup-go@d8cbb8045d7f43706b9177cceb36c1f91a6644d5 # v7.1.0
         with:
           go-version-file: go.mod
       - run: test -z "$(gofmt -l .)"
@@ -35,7 +35,7 @@ jobs:
   release:
     needs: verify
     if: startsWith(github.ref, 'refs/tags/')
-    uses: adriangalilea/ci/.github/workflows/release.yml@7018e276a6c519cef370fb1eeb1b8b5ee34da500 # v1.2.2
+    uses: adriangalilea/ci/.github/workflows/release.yml@355bd2330515807555f687b9bcf69e656dee1161 # v1.10.3
     with:
       tag: ${{ github.ref_name }}
     permissions:
